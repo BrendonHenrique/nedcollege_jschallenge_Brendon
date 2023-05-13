@@ -1,16 +1,29 @@
 {
-  "env": {
-    "test": {
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "targets": {
-              "node": "current"
-            }
-          }
-        ]
-      ]
-    }
-  }
+  "presets": [
+  [
+    "@babel/preset-env", {
+      "targets": {
+        "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-typescript",
+    "@vue/babel-preset-jsx"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-jsx",
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "h"
+      }
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ]
 }
+
