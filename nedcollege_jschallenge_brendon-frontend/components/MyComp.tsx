@@ -1,11 +1,11 @@
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue, Component } from "nuxt-property-decorator"
 
 @Component
 export default class MyComponent extends Vue {
-  value: string = ''
+  value: string = ""
 
   render() {
-    return ( 
+    return (
       <div>
         <input v-model={this.value} />
 

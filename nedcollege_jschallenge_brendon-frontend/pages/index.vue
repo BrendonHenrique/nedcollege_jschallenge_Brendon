@@ -96,7 +96,7 @@ import {
   CModalCloseButton,
   CIconButton,
   CFlex,
-  CHeading
+  CHeading,
 } from '@chakra-ui/vue'
 
 export default {
@@ -116,22 +116,22 @@ export default {
     CModalCloseButton,
     CIconButton,
     CFlex,
-    CHeading
+    CHeading,
   },
-  inject: ['$chakraColorMode', '$toggleColorMode'],
+  inject: ['$chakraColorMode', '$toggleColorMode',],
   data () {
     return {
       showModal: false,
       mainStyles: {
         dark: {
           bg: 'gray.700',
-          color: 'whiteAlpha.900'
+          color: 'whiteAlpha.900',
         },
         light: {
           bg: 'white',
-          color: 'gray.900'
-        }
-      }
+          color: 'gray.900',
+        },
+      },
     }
   },
   computed: {
@@ -143,7 +143,7 @@ export default {
     },
     toggleColorMode () {
       return this.$toggleColorMode
-    }
+    },
   },
   methods: {
     showToast () {
@@ -152,9 +152,9 @@ export default {
         description: "We've created your account for you.",
         status: 'success',
         duration: 10000,
-        isClosable: true
-      })
-    }
-  }
+        isClosable: true,
+      },)
+    },
+  },
 }
 </script>

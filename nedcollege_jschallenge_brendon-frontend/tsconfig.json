@@ -14,14 +14,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "*": ["@types/*"],
+      "*": ["@types/*"]
     },
-    "types": [
-      "@nuxt/types", 
-      "@nuxtjs/axios", 
-      "@types/node",
-      "cypress"
-    ]
+    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "cypress"]
   },
   "include": ["**/*.tsx"],
   "exclude": ["node_modules", ".nuxt", "dist"]
