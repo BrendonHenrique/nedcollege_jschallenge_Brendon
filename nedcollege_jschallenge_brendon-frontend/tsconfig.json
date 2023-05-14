@@ -18,6 +18,6 @@
     },
     "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "cypress"]
   },
-  "include": ["**/*.tsx"],
+  "include": ["**/*.tsx", "@types"],
   "exclude": ["node_modules", ".nuxt", "dist"]
 }
