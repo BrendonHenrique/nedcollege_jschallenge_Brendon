@@ -1,0 +1,47 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "@nuxtjs",
+    "@nuxtjs/eslint-config-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "vue/attribute-hyphenation": ["error", "always"],
+    "vue/html-self-closing": [
+      "error",
+      {
+        "html": {
+          "void": "always",
+          "normal": "always",
+          "component": "always"
+        }
+      }
+    ],
+    "vue/no-v-html": "error",
+    "vue/no-unused-components": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "no-irregular-whitespace": "error",
+    "semi": ["error", "never"],
+    "require-await": "warn",
+    "no-constant-condition": "warn",
+    "no-unused-expressions": "warn",
+    "camelcase": "warn",
+    "no-empty-pattern": "warn",
+    "linebreak-style": ["error", "unix"]
+  }
+}

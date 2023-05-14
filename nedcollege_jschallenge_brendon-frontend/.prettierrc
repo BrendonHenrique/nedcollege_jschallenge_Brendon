@@ -1,4 +1,10 @@
 {
   "semi": false,
-  "singleQuote": true
+  "singleQuote": false,
+  "jsxSingleQuote": false,
+  "bracketSpacing": true,
+  "htmlWhitespaceSensitivity": "css",
+  "embeddedLanguageFormatting": "auto",
+  "arrowParens": "always",
+  "trailingComma": "none"
 }
