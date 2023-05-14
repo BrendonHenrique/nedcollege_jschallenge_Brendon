@@ -12,7 +12,9 @@
     "lint:prettier": "prettier --check .",
     "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
     "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "prepare": "cd .. && husky install nedcollege_jschallenge_brendon-frontend/.husky"
   },
   "dependencies": {
     "@chakra-ui/nuxt": "^0.6.0",
@@ -32,8 +34,6 @@
     "@babel/plugin-syntax-jsx": "^7.21.4",
     "@babel/plugin-transform-react-jsx": "^7.21.5",
     "@babel/preset-typescript": "^7.21.5",
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
@@ -46,6 +46,7 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.5.1",
+    "husky": "^8.0.3",
     "postcss-html": "^1.5.0",
     "prettier": "^2.7.1",
     "stylelint": "^15.6.1",

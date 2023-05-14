@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+cd nedcollege_jschallenge_brendon-frontend
+yarn lintfix
+yarn run cypress run --component
