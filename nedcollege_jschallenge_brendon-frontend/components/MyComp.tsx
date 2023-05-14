@@ -6,7 +6,7 @@ export interface IMyComponent {
 }
 
 @Component
-export class MyComponent extends VueComponent<IMyComponent> {
+export default class MyComponent extends VueComponent<IMyComponent> {
   @Prop(String) initialValue!: string
   value: string = ""
 

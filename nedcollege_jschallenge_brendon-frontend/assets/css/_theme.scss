@@ -1,0 +1,17 @@
+@import 'variables';
+
+// Overriding chakra base theme 
+:root { 
+  --chakra-colors-primary: #{$primary-color} !important;
+  --chakra-colors-secondary: #{$secondary-color} !important;
+  --chakra-colors-tertiary: #{$tertiary-color} !important;
+  --chakra-colors-success: #{$success-color} !important;
+  --chakra-colors-warning: #{$warning-color} !important;
+  --chakra-colors-error: #{$error-color} !important;
+
+  --chakra-breakpoints-sm: #{$breakpoints-sm} !important;
+  --chakra-breakpoints-md: #{$breakpoints-md} !important;
+  --chakra-breakpoints-lg: #{$breakpoints-lg} !important;
+
+  --chakra-fonts-body: #{$fonts-family} !important;
+}
