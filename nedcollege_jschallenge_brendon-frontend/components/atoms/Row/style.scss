@@ -1,0 +1,17 @@
+@import "@/assets/css/_variables.scss";
+
+.atom-row {
+  grid-column-start: var(--grid-column-start-mobile);
+  grid-column-end: var(--grid-column-end-mobile);
+
+  & > * {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: #{$breakpoints-md}) {
+  .atom-row {
+    grid-column-start: var(--grid-column-start-desktop);
+    grid-column-end: var(--grid-column-end-desktop);
+  }
+}

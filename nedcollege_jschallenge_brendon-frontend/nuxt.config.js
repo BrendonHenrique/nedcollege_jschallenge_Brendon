@@ -1,5 +1,3 @@
-import chakraConfig from "./config/chakra"
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -31,7 +29,7 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   // disclaimer: since since jsx components are variable based this will work only for .vue sfc components
   // to work with .tsx files all components would require a .d.ts module for global registration
-  components: true,
+  components: false,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -61,6 +59,8 @@ export default {
   build: {},
 
   chakra: {
-    ...chakraConfig
+    extendTheme: {
+      breakpoints: ["600px", "1024px", "1440px"]
+    }
   }
 }
