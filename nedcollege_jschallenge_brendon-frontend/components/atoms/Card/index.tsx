@@ -8,6 +8,9 @@ interface IAtomCard {
   marginRight?: string
   marginBottom?: string
   marginLeft?: string
+  padding?: string
+  height?: string
+  width?: string
 }
 
 @Component
@@ -17,6 +20,23 @@ export default class AtomCard extends VueComponent<IAtomCard> {
   @Prop(String) marginRight!: string
   @Prop(String) marginBottom!: string
   @Prop(String) marginLeft!: string
+  @Prop({
+    type: String,
+    default: "auto"
+  })
+  height!: string
+
+  @Prop({
+    type: String,
+    default: "auto"
+  })
+  width!: string
+
+  @Prop({
+    type: String,
+    default: "16px"
+  })
+  padding!: string
 
   render() {
     return (
@@ -24,7 +44,9 @@ export default class AtomCard extends VueComponent<IAtomCard> {
         {...{
           on: { ...this.$listeners },
           attrs: {
-            padding: "4",
+            padding: this.padding,
+            height: this.height,
+            "min-width": this.width,
             borderRadius: "8",
             borderWidth: "1px",
             borderStyle: "solid",

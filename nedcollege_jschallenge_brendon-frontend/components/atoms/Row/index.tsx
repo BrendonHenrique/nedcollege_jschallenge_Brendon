@@ -8,6 +8,8 @@ interface IAtomRow {
   desktopStart?: number
   mobileEnd?: number
   desktopEnd?: number
+  marginBottom?: string
+  alignItems?: string
 }
 
 @Component
@@ -36,6 +38,9 @@ export default class AtomRow extends VueComponent<IAtomRow> {
   })
   desktopEnd!: number
 
+  @Prop(String) marginBottom!: string
+  @Prop(String) alignItems!: string
+
   render() {
     return (
       <CPseudoBox
@@ -50,7 +55,8 @@ export default class AtomRow extends VueComponent<IAtomRow> {
             "--grid-column-end-desktop": `${this.desktopEnd + 1}`
           },
           attrs: {
-            ...this.$attrs
+            marginBottom: this.marginBottom,
+            alignItems: this.alignItems
           }
         }}
       >

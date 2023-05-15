@@ -2,9 +2,12 @@
   <div class="container">
     <CThemeProvider>
       <CColorModeProvider>
-        <CBox font-family="body" as="main">
+        <CBox font-family="body">
           <CReset />
-          <Nuxt />
+          <Header />
+          <CBox pt="80px" as="main">
+            <Nuxt />
+          </CBox>
         </CBox>
       </CColorModeProvider>
     </CThemeProvider>
@@ -17,6 +20,7 @@ import {
   CReset,
   CBox
 } from "@chakra-ui/vue"
+import Molecules from "@/components/Molecules"
 
 export default {
   name: "DefaultLayout",
@@ -24,7 +28,9 @@ export default {
     CThemeProvider,
     CColorModeProvider,
     CReset,
-    CBox
+    CBox,
+    // eslint-disable-next-line vue/no-reserved-component-names
+    Header: Molecules.Header
   }
 }
 </script>

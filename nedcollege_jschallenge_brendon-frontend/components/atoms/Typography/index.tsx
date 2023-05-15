@@ -6,16 +6,12 @@ import VueComponent from "@/config"
 interface IAtomTypography {
   as: valiableOptions | valiableOptions[]
   color?: string
-  fontWeight?: number
-  lineHeight?: string
 }
 
 @Component
 export default class AtomTypography extends VueComponent<IAtomTypography> {
   @Prop([String, Array]) as!: valiableOptions | valiableOptions[]
   @Prop(String) color!: string
-  @Prop(Number) fontWeight!: number
-  @Prop(String) lineHeight!: string
 
   render() {
     const flatedValue = [this.as].flat()

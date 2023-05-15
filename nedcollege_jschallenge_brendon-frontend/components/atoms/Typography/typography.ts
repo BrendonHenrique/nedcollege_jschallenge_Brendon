@@ -1,8 +1,17 @@
 type fontTag = {
-  as: "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+  as: "span" | "p" | "h1" | "h2" | "h3" | "h3-bold" | "h4" | "h5" | "h6"
 }
 
-type valiableOptions = "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+type valiableOptions =
+  | "span"
+  | "p"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h3-bold"
+  | "h4"
+  | "h5"
+  | "h6"
 
 const span: fontTag = { as: "span" }
 const p: fontTag = { as: "p" }
@@ -31,7 +40,7 @@ const PropAcessor = () =>
     },
     p: {
       ...p,
-      ...propProvider("16px", "16px", 400)
+      ...propProvider("16px", "26px", 400)
     },
     h1: {
       ...h1,
@@ -44,6 +53,10 @@ const PropAcessor = () =>
     h3: {
       ...h3,
       ...propProvider("28px", "28px", 400)
+    },
+    "h3-bold": {
+      ...h3,
+      ...propProvider("28px", "28px", 700)
     },
     h4: {
       ...h4,

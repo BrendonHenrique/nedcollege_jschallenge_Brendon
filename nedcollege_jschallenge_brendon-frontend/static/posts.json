@@ -1,0 +1,47 @@
+[
+  {
+    "image": "https://placehold.co/600x400",
+    "category": "Technology",
+    "title": "The Future of AI",
+    "author": "John Doe",
+    "createdAt": "2023-05-10",
+    "readTime": "10 minutes",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec semper elit, id auctor ligula. Nulla dictum mi id orci aliquet, non rutrum purus facilisis. Quisque a feugiat turpis, in viverra enim. Sed eu malesuada tellus. Sed tempus metus id consectetur condimentum. Suspendisse malesuada vestibulum sem id posuere. Vestibulum volutpat erat at felis dictum hendrerit. Aliquam erat volutpat."
+  },
+  {
+    "image": "https://placehold.co/600x400",
+    "category": "Science",
+    "title": "Exploring the Cosmos",
+    "author": "Jane Smith",
+    "createdAt": "2023-04-28",
+    "readTime": "8 minutes",
+    "text": "Pellentesque et condimentum odio, a cursus purus. In tincidunt leo vitae massa dictum, vitae elementum leo efficitur. Mauris ut eros eu massa pellentesque varius in et metus. Sed nec odio varius, dapibus tortor eget, cursus lectus. Aenean gravida pulvinar lorem et maximus. Nullam at rhoncus dolor. Duis gravida felis sed tortor tempus lobortis."
+  },
+  {
+    "image": "https://placehold.co/600x400",
+    "category": "Travel",
+    "title": "A Journey Through Asia",
+    "author": "David Johnson",
+    "createdAt": "2023-04-15",
+    "readTime": "12 minutes",
+    "text": "Vestibulum eu leo pharetra, porttitor purus eu, dapibus justo. Suspendisse potenti. Morbi at elit tincidunt, feugiat sem vel, dapibus neque. Cras nec turpis eget odio ultrices malesuada. Nam vel libero sed mauris consequat efficitur. Duis finibus ex sit amet turpis consectetur, eget eleifend sem cursus. Fusce at lorem hendrerit, consequat nunc in, euismod sem."
+  },
+  {
+    "image": "https://placehold.co/600x400",
+    "category": "Health",
+    "title": "The Benefits of Yoga",
+    "author": "Emily Wilson",
+    "createdAt": "2023-03-22",
+    "readTime": "6 minutes",
+    "text": "Proin in velit eget lacus vulputate laoreet eu non velit. Suspendisse ut lacinia lectus. Nullam cursus quam ac massa ullamcorper, id dapibus velit venenatis. Etiam facilisis nunc quis libero tempor fringilla. Suspendisse tristique eleifend metus, at cursus odio volutpat eu. In pharetra scelerisque turpis, et luctus risus imperdiet non. In in vestibulum urna."
+  },
+  {
+    "image": "https://placehold.co/600x400",
+    "category": "Sports",
+    "title": "The Rise of Esports",
+    "author": "Michael Brown",
+    "createdAt": "2023-03-10",
+    "readTime": "9 minutes",
+    "text": "Proin in velit eget lacus vulputate laoreet eu non velit. Suspendisse ut lacinia lectus. Nullam cursus quam ac massa ullamcorper, id dapibus velit venenatis. Etiam facilisis nunc quis libero tempor fringilla. Suspendisse tristique eleifend metus, at cursus odio volutpat eu. In pharetra scelerisque turpis, et luctus risus imperdiet non. In in vestibulum urna."
+  }
+]
