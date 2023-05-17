@@ -15,8 +15,4 @@ export const config: Knex.Config = {
   },
 }
 
-export const tables = {
-  POSTS: 'posts',
-}
-
 export const knex = setupKnex(config)
