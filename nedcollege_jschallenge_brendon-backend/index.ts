@@ -1,13 +1,10 @@
 import express, { Express, Request, Response } from 'express'
-import dotenv from 'dotenv'
+import { env } from './src/env'
 import crypto from 'node:crypto'
 import { knex, tables } from './src/db'
 import { IBlogPost } from './src/model/posts'
 
-dotenv.config()
-
 const app: Express = express()
-const port = process.env.PORT
 
 app.get('/api', async (req: Request, res: Response) => {
   try {
@@ -32,6 +29,6 @@ app.get('/api', async (req: Request, res: Response) => {
   }
 })
 
-app.listen(port, () => {
-  console.log(`foo[server]: Server is running at http://localhost:${port}`)
+app.listen(env.PORT, () => {
+  console.log(`foo[server]: Server is running at http://localhost:${env.PORT}`)
 })

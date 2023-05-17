@@ -1,19 +1,17 @@
 import { knex as setupKnex, Knex } from 'knex'
-import * as dotenv from 'dotenv'
-
-dotenv.config()
+import { env } from '../env'
 
 export const config: Knex.Config = {
-  client: process.env.DB_ClIENT,
+  client: env.DB_ClIENT,
   connection: {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    host: env.DB_HOST,
+    user: env.DB_USER,
+    password: env.DB_PASSWORD,
+    database: env.DB_NAME,
   },
   migrations: {
     extension: 'ts',
-    directory: process.env.DB_MIGRATIONS,
+    directory: env.DB_MIGRATIONS,
   },
 }
 
