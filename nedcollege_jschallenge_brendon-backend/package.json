@@ -6,23 +6,29 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/index.ts",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
-    "knex": "node ./node_modules/.bin/knex",
-    "knex-sync-migrations": "node ./node_modules/.bin/knex -- migrate:latest",
-    "knex-rollback-migrations": "node ./node_modules/.bin/knex -- migrate:rollback"
+    "dev": "NODE_ENV=development concurrently \"npx tsc --watch\" \"nodemon -r ./setup-aliases.js -q dist/index.js\"",
+    "seed": "npx sequelize-cli db:seed:all"
+  },
+  "_moduleAliases": {
+    "@": "dist"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "knex": "^2.4.2",
+    "module-alias": "^2.2.2",
     "mysql2": "^3.3.1",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.31.1",
+    "sequelize-typescript": "^2.1.5",
     "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^20.1.7",
+    "@types/validator": "^13.7.17",
     "concurrently": "^8.0.1",
     "nodemon": "^2.0.22",
+    "sequelize-cli": "^6.6.0",
     "typescript": "^5.0.4"
   }
 }

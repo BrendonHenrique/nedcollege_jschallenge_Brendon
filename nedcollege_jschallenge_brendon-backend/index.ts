@@ -1,6 +1,6 @@
 import express, { Express } from 'express'
-import { env } from './src/env'
-import routes from './src/routes'
+import routes from '@/routes'
+import { env } from '@/env'
 
 const app: Express = express()
 

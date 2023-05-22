@@ -9,7 +9,7 @@ const envSchema = z.object({
   DB_USER: z.string(),
   DB_PASSWORD: z.string(),
   DB_NAME: z.string(),
-  DB_MIGRATIONS: z.string(),
+  DB_PORT: z.string(),
 })
 
 const _env = envSchema.safeParse(process.env)
