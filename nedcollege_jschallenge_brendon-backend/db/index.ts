@@ -1,12 +1,16 @@
 import { Sequelize } from 'sequelize-typescript'
-import path from 'path'
+import { env } from '@/env'
+import { Dialect } from 'sequelize'
+import Models from '@/db/models'
 
-const env = process.env.NODE_ENV || 'development'
-const config = require('./config/config.json')[env]
-
-const sequelize = new Sequelize({
-  ...config,
-  models: [path.join(__dirname, './models')],
+const Database = new Sequelize({
+  database: env.DB_NAME,
+  username: env.DB_USER,
+  password: env.DB_PASSWORD,
+  host: env.DB_HOST,
+  dialect: env.DB_ClIENT as Dialect,
 })
 
-export default sequelize
+Database.addModels([Models.Post])
+
+export default Database

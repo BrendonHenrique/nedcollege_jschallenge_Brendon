@@ -6,8 +6,7 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/index.ts",
-    "dev": "NODE_ENV=development concurrently \"npx tsc --watch\" \"nodemon -r ./setup-aliases.js -q dist/index.js\"",
-    "seed": "npx sequelize-cli db:seed:all"
+    "dev": "NODE_ENV=development concurrently \"npx tsc --watch\" \"nodemon -r ./setup-aliases.js -q dist/index.js\""
   },
   "_moduleAliases": {
     "@": "dist"
@@ -28,7 +27,6 @@
     "@types/validator": "^13.7.17",
     "concurrently": "^8.0.1",
     "nodemon": "^2.0.22",
-    "sequelize-cli": "^6.6.0",
     "typescript": "^5.0.4"
   }
 }

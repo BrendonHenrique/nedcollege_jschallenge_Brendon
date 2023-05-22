@@ -1,6 +1,9 @@
 import express, { Express } from 'express'
 import routes from '@/routes'
 import { env } from '@/env'
+import sequelize from '@/db'
+
+sequelize.sync()
 
 const app: Express = express()
 
