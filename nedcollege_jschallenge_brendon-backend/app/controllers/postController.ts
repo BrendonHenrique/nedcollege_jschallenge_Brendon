@@ -1,15 +1,17 @@
 import { Request, Response } from 'express'
 import * as postService from '@/app/services/postService'
+import * as Errors from '@/app/errors'
 
 export const getAllPosts = async (_: Request, res: Response) => {
   try {
     const posts = await postService.getAllPosts()
-
-    if (!!posts.length) res.status(200).json(posts)
-    else res.status(404).json({ msg: 'Posts are empty' })
+    res.status(200).json(posts)
   } catch (error) {
-    console.error('Failed to retrieve posts:', error)
-    res.status(500).json({ error: 'Failed to retrieve posts' })
+    if (error instanceof Errors.NotFoundError) {
+      res.status(404).json({ error: error.message })
+    } else {
+      res.status(500).json({ error: (error as Errors.InternalError).message })
+    }
   }
 }
 
@@ -17,38 +19,44 @@ export const getPostById = async (req: Request, res: Response) => {
   try {
     const id: string = req.params.id
     const post = await postService.getPostById(id)
-
-    if (!!post) res.status(200).json(post)
-    else res.status(404).json({ msg: 'Post not found' })
+    res.status(200).json(post)
   } catch (error) {
-    console.error('Failed to retrieve post:', error)
-    res.status(500).json({ error: 'Failed to retrieve post' })
+    if (error instanceof Errors.NotFoundError) {
+      res.status(404).json({ error: error.message })
+    } else {
+      res.status(500).json({ error: (error as Errors.InternalError).message })
+    }
   }
 }
 
 export const deletePostById = async (req: Request, res: Response) => {
   try {
     const id: string = req.params.id
-    const isDeleted = await postService.deletePostById(id)
-
-    if (isDeleted) res.status(202).json({ msg: 'Success on delete post' })
-    else res.status(404).json({ error: 'Post was not found to be deleted' })
+    await postService.deletePostById(id)
+    res.status(202).json({ msg: 'Success on delete post' })
   } catch (error) {
-    console.error('Failed to delete post:', error)
-    res.status(500).json({ error: 'Failed to delete post' })
+    if (error instanceof Errors.NotFoundError) {
+      res.status(404).json({ error: error.message })
+    } else {
+      res.status(500).json({ error: (error as Errors.InternalError).message })
+    }
   }
 }
 
 export const createPost = async (req: Request, res: Response) => {
   try {
     const body = req.body
-    const newPost = await postService.createPost(body)
-
-    if (!!newPost) res.status(201).json(newPost)
-    else res.status(500).json({ error: 'Failed to create new post' })
+    const post = await postService.createPost(body)
+    res.status(201).json({
+      msg: 'Success on create post',
+      post,
+    })
   } catch (error) {
-    console.error('Failed to create new post:', error)
-    res.status(500).json({ error: 'Failed to create new post' })
+    if (error instanceof Errors.NotCreatedError) {
+      res.status(404).json({ error: error.message })
+    } else {
+      res.status(500).json({ error: (error as Errors.InternalError).message })
+    }
   }
 }
 
@@ -56,12 +64,16 @@ export const updatePost = async (req: Request, res: Response) => {
   try {
     const id: string = req.params.id
     const body = req.body
-    const updatedPost = await postService.updatePost(id, body)
-
-    if (!!updatedPost) res.status(200).json(updatedPost)
-    else res.status(404).json({ msg: 'Post not found' })
+    const post = await postService.updatePost(id, body)
+    res.status(200).json({
+      msg: 'Success on update post',
+      post,
+    })
   } catch (error) {
-    console.error('Failed to update post:', error)
-    res.status(500).json({ error: 'Failed to update post' })
+    if (error instanceof Errors.NotUpdatedError) {
+      res.status(404).json({ error: error.message })
+    } else {
+      res.status(500).json({ error: (error as Errors.InternalError).message })
+    }
   }
 }

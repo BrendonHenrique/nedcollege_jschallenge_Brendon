@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript'
 import { env } from '@/config/env'
 import { Dialect } from 'sequelize'
-import Models from '@/app/models'
+import Post from '@/app/models/Post'
 
 const Database = new Sequelize({
   database: env.DB_NAME,
@@ -11,6 +11,6 @@ const Database = new Sequelize({
   dialect: env.DB_ClIENT as Dialect,
 })
 
-Database.addModels([Models.Post])
+Database.addModels([Post])
 
 export default Database
