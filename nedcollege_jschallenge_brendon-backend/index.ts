@@ -1,7 +1,7 @@
 import express, { Express } from 'express'
 import routes from '@/routes'
-import { env } from '@/env'
-import sequelize from '@/db'
+import { env } from '@/config/env'
+import sequelize from '@/config/database'
 
 sequelize.sync()
 

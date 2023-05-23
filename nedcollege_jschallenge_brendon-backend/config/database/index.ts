@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript'
-import { env } from '@/env'
+import { env } from '@/config/env'
 import { Dialect } from 'sequelize'
-import Models from '@/db/models'
+import Models from '@/app/models'
 
 const Database = new Sequelize({
   database: env.DB_NAME,
